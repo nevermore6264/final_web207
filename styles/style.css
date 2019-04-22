@@ -1,0 +1,45 @@
+
+.poly-sheet {
+    box-shadow: 0 0 1px lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    top: -10px;
+}
+
+.poly-sheet>article.col-sm-9,
+.poly-sheet>aside.col-sm-3 {
+    padding: 5px;
+}
+
+/*--ASIDE BOX--*/
+
+.poly-cart {
+    margin-top: 5px;
+}
+
+.poly-cart ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+}
+
+.carousel-inner img {
+    margin: 0 auto;
+    height: 300px !important;
+    max-width: 95%;
+}
+
+#accordion .panel-heading {
+    cursor: pointer !important;
+}
+
+.img-thumbnail{
+    height: 50px;
+    max-width: 95%;
+}
+
+/*
+
+*/

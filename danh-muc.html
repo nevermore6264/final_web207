@@ -1,0 +1,174 @@
+ <!-- Courses -->
+
+ <!-- <link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" /> -->
+ 
+ <style>
+     .pagination {
+         display: inline-block;
+         padding-left: 0;
+         margin: 20px 0;
+         border-radius: 4px
+     }
+
+     .pagination>li {
+         display: inline
+     }
+
+     .pagination>li>a,
+     .pagination>li>span {
+         position: relative;
+         float: left;
+         padding: 6px 12px;
+         margin-left: -1px;
+         line-height: 1.42857143;
+         color: #337ab7;
+         text-decoration: none;
+         background-color: #fff;
+         border: 1px solid #ddd
+     }
+
+     .pagination>li:first-child>a,
+     .pagination>li:first-child>span {
+         margin-left: 0;
+         border-top-left-radius: 4px;
+         border-bottom-left-radius: 4px
+     }
+
+     .pagination>li:last-child>a,
+     .pagination>li:last-child>span {
+         border-top-right-radius: 4px;
+         border-bottom-right-radius: 4px
+     }
+
+     .pagination>li>a:hover,
+     .pagination>li>span:hover,
+     .pagination>li>a:focus,
+     .pagination>li>span:focus {
+         color: #23527c;
+         background-color: #eee;
+         border-color: #ddd
+     }
+
+     .pagination>.active>a,
+     .pagination>.active>span,
+     .pagination>.active>a:hover,
+     .pagination>.active>span:hover,
+     .pagination>.active>a:focus,
+     .pagination>.active>span:focus {
+         z-index: 2;
+         color: #fff;
+         cursor: default;
+         background-color: #337ab7;
+         border-color: #337ab7
+     }
+
+     .pagination>.disabled>span,
+     .pagination>.disabled>span:hover,
+     .pagination>.disabled>span:focus,
+     .pagination>.disabled>a,
+     .pagination>.disabled>a:hover,
+     .pagination>.disabled>a:focus {
+         color: #777;
+         cursor: not-allowed;
+         background-color: #fff;
+         border-color: #ddd
+     }
+
+     .pagination-lg>li>a,
+     .pagination-lg>li>span {
+         padding: 10px 16px;
+         font-size: 18px
+     }
+
+     .pagination-lg>li:first-child>a,
+     .pagination-lg>li:first-child>span {
+         border-top-left-radius: 6px;
+         border-bottom-left-radius: 6px
+     }
+
+     .pagination-lg>li:last-child>a,
+     .pagination-lg>li:last-child>span {
+         border-top-right-radius: 6px;
+         border-bottom-right-radius: 6px
+     }
+
+     .pagination-sm>li>a,
+     .pagination-sm>li>span {
+         padding: 5px 10px;
+         font-size: 12px
+     }
+
+     .pagination-sm>li:first-child>a,
+     .pagination-sm>li:first-child>span {
+         border-top-left-radius: 3px;
+         border-bottom-left-radius: 3px
+     }
+
+     .pagination-sm>li:last-child>a,
+     .pagination-sm>li:last-child>span {
+         border-top-right-radius: 3px;
+         border-bottom-right-radius: 3px
+     }
+ </style>
+
+ <div class="courses" style="margin-top: -60px;"></div>
+ <div class="container" style="margin-bottom: 40px">
+     <div class="row">
+
+         <div class="col-lg-8">
+             <div class="card" style="margin-bottom: -40px">
+                 <div class="card-body p-4">
+                     <form action="#" class="d-flex flex-row align-items-center justify-content-start">
+                         <input type="search" class="form-control courses_search_input mr-3"
+                             placeholder="Tìm kiếm khóa học">
+                         <button style="cursor: pointer;" class="btn btn-primary ml-auto">Tìm kiếm</button>
+                     </form>
+                 </div>
+             </div>
+             <div class="courses_container">
+                 <div class="row courses_row">
+
+                     <div class="col-lg-6 course_col mt-4"
+                         ng-repeat="c in categories.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                         <div class="card">
+                             <div class="course_image text-center"><img src="images/logos/{{ c.Logo }}" alt=""></div>
+                             <div class="card_body">
+                                 <h3 class="course_title text-center m-3"><a href="#test/{{ c.Id }}"
+                                         style="font-size: 16px;">{{ c.Name }}</a>
+                                 </h3>
+                             </div>
+                             <div class="course_footer">
+                                 <div
+                                     class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                     <div class="course_info">
+                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                         <span>10 câu</span>
+                                     </div>
+                                     <a ng-if="auth!='null'" href="#test/{{ c.Id }}" class="course_price ml-auto">Bắt đầu</a>
+                            
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+                 <pagination total-items="categories.length" ng-model="currentPage" max-size="maxSize"
+                     class="pagination-sm" boundary-links="true" items-per-page="itemsPerPage"></pagination>
+             </div>
+         </div>
+
+         <div class="col-lg-4">
+             <div class="sidebar">
+                 <div class="sidebar_section">
+                     <div class="sidebar_section_title">Danh mục môn học</div>
+                     <div class="sidebar_categories">
+                         <a ng-if="auth=='null'" href="" class="list-group-item"
+                             ng-repeat="item in categories">{{ item.Name }}</a>
+                         <a ng-if="auth!='null'" href="#test/{{ item.Id }}" class="list-group-item"
+                             ng-repeat="item in categories">{{ item.Name }}</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>

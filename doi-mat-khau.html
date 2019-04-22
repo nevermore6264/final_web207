@@ -1,0 +1,48 @@
+<div class="card" style="margin: 120px 50px 100px 50px">
+    <div class="card-header">
+        Quên mật khẩu
+    </div>
+    <div class="card-body">
+        <form name="formDoiMK">
+            <div class="form-group" ng-if="success">
+                <span class="alert alert-success btn-block" role="alert">
+                    <div style="color: black">{{ success }}</div>
+                </span>
+            </div>
+            <div class="form-group" ng-if="fail">
+                <span class="alert alert-danger btn-block" role="alert">
+                    <div style="color: black">{{ fail }}</div>
+                </span>
+            </div>
+            <div class="form-group">
+                Tên truy cập
+                <input type="text" ng-model="user.username" class="form-control" placeholder="Tên truy cập">
+            </div>
+            <div class="form-group">
+                Mật khẩu cũ
+                <input type="password" ng-model="user.prePassword" class="form-control" placeholder="Nhập mật khẩu cũ">
+            </div>
+            <div class="form-group">
+                Mật khẩu mới
+                <input type="password" style="color: black" name="txtPassword" minlength="8" ng-model="user.newPassword"
+                    class="form-control" placeholder="Nhập mật khẩu mới">
+            </div>
+            <div class="form-group">
+                <span class="alert alert-danger btn-block" role="alert" ng-show="formDoiMK.txtPassword.$invalid">
+                    Mật khẩu ít nhất 8 ký tự
+                </span>
+            </div>
+            <div class="form-group">
+                Xác nhận mật khẩu mới
+                <input type="password" style="color: black" compare-to="user.newPassword" name="txtRepassword"
+                    ng-model="user.reNewPassword" class="form-control" placeholder="Nhập xác nhận mật khẩu mới">
+            </div>
+            <div class="form-group">
+                <span class="alert alert-danger btn-block" role="alert" ng-show="formDoiMK.txtRepassword.$invalid">
+                    Xác nhận mật khẩu không khớp với mật khẩu mới
+                </span>
+            </div>
+        </form>
+        <button class="btn btn-primary" style="cursor: pointer" ng-click="changePass()">Đổi mật khẩu</button>
+    </div>
+</div>

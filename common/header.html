@@ -1,0 +1,45 @@
+<header class="header">
+    <div class="header_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <a href="#">
+                                <div class="logo_text">Unic<span>at</span></div>
+                            </a>
+                        </div>
+                        <nav class="main_nav_contaner ml-auto">
+                            <ul class="main_nav" style="margin-left: -400px !important">
+                            <!-- <ul class="main_nav"> -->
+                                <li ng-repeat="section in sections" ng-class="{active : isSelected(section)}"><a
+                                        href="{{ section.url }}" ng-click="setMaster(section)">{{ section.name }}</a>
+                                </li>
+                            </ul>
+                            <div ng-if="auth=='null'" class="search_button"><a href="#login" style="color: black; font-size: 18px !important"><i class="fa fa-user"
+                                        aria-hidden="true"></i> Login</a></div>
+                            <div ng-if="auth!='null'" class="dropdown" style="position: absolute; top: 25px; right: -90px;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" style=" cursor: pointer;"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Chào {{ auth }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#changePass">Đổi mật khẩu</a>
+                                    <a class="dropdown-item" href="#ChangeInfo">Sửa đổi thông tin</a>
+                                    <a class="dropdown-item" href="#fogot">Quên mật khẩu</a>
+                                    <a class="dropdown-item" href="#login">Lịch sử thi</a>
+                                    <hr>
+                                    <a class="dropdown-item" href="" ng-click="logout()">Logout</a>
+                                </div>
+                            </div>
+                            <div class="hamburger menu_mm">
+                                <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,28 @@
+<div class="card" style="margin: 120px 50px 100px 50px">
+    <div class="card-header">
+        Quên mật khẩu
+    </div>
+    <div class="card-body">
+        <form name="formQuenMK">
+            <div class="form-group" ng-if="success">
+                <span class="alert alert-success btn-block" role="alert">
+                    <div style="color: black">Mật khẩu của bạn là: {{ success }}</div>
+                </span>
+            </div>
+            <div class="form-group" ng-if="fail">
+                <span class="alert alert-danger btn-block" role="alert">
+                    <div style="color: black">{{ fail }}</div>
+                </span>
+            </div>
+            <div class="form-group">
+                Tên truy cập
+                <input type="text" class="form-control" ng-model="user.username" placeholder="Tên truy cập">
+            </div>
+            <div class="form-group">
+                Email
+                <input type="email" class="form-control" ng-model="user.email" placeholder="Email">
+            </div>
+        </form>
+        <button class="btn btn-primary" ng-click="fogot()" style="cursor: pointer">Lấy mật khẩu</button>
+    </div>
+</div>
