@@ -4,8 +4,6 @@ app.controller("testController", function ($scope, service, $routeParams, $timeo
     $scope.anws;
     $scope.title = "";
 
-    // Math.floor(Math.random() * Math.floor(max));
-
     $scope.showSt = true;
     $scope.showQs = false;
     $scope.showAs = false;
