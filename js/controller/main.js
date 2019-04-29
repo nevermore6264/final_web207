@@ -32,44 +32,44 @@ app.config(function ($routeProvider) {
             redirectTo: "/home"
         })
         .when("/contact", {
-            templateUrl: "lien-he.html"
+            templateUrl: "contact.html"
         })
         .when("/home", {
             templateUrl: "home.html",
             controller: 'homeController'
         })
         .when("/category", {
-            templateUrl: "danh-muc.html",
+            templateUrl: "category.html",
             controller: "categoryController"
         })
         .when("/ask", {
-            templateUrl: "hoi-dap.html"
+            templateUrl: "faq.html"
         })
         .when("/intro", {
-            templateUrl: "gioi-thieu.html"
+            templateUrl: "intro.html"
         })
         .when("/login", {
-            templateUrl: "dang-nhap.html",
+            templateUrl: "login.html",
             controller: 'authenticationController'
         })
         .when("/logon", {
-            templateUrl: "dang-ky.html",
+            templateUrl: "register.html",
             controller: 'authenticationController'
         })
         .when("/fogot", {
-            templateUrl: "quen-mat-khau.html",
+            templateUrl: "forgot-password.html",
             controller: 'authenticationController'
         })
         .when("/changePass", {
-            templateUrl: "doi-mat-khau.html",
+            templateUrl: "change-password.html",
             controller: 'authenticationController'
         })
         .when("/ChangeInfo", {
-            templateUrl: "doi-thong-tin.html",
+            templateUrl: "change-info.html",
             controller: 'authenticationController'
         })
         .when("/test/:id", {
-            templateUrl: "thi.html",
+            templateUrl: "exam.html",
             controller: "testController"
         })
         .otherwise({
