@@ -1,5 +1,5 @@
 # quizcat
-Project final then learn course: Learn and Understand AngularJS
+Project final then learn course: [Learn and Understand AngularJS](https://www.udemy.com/learn-angularjs/)
 
 In this project:
 - Login/Register
